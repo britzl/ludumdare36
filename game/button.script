@@ -40,7 +40,10 @@ function on_message(self, message_id, message, sender)
 	if message_id == hash("collision_response") then
 		self.on_button = true
 	elseif message_id == hash("upgrade_button") then
-		
+		print("upgrade_button")
+		self.type = "gold"
+		self.energy = 20
+		msg.post("#sprite", "play_animation", { id = self.pressed and animations[self.type].pressed or animations[self.type].released })
 	end
 end
 

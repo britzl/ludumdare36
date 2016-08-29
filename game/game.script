@@ -39,6 +39,8 @@ function init(self)
 		flow.until_message(hash("bomb_created"))
 		show_message("That's it!", 2)
 		show_message("I should probably not let them reach the cube", 2)
+		flow.delay(10)
+		--msg.post("game:/button", "upgrade_button")
 	end)
 end
 
