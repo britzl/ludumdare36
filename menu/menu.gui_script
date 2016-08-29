@@ -1,6 +1,10 @@
+local instructions = [[PRESS ANY KEY TO START
+ARROW KEYS TO MOVE]]
+
 function init(self)
 	self.game_started = false
 	self.instructions_node = gui.get_node("instructions")
+	gui.set_text(self.instructions_node, instructions)
 	
 	msg.post("#gameproxy", "load")
 	msg.post(".", "acquire_input_focus")

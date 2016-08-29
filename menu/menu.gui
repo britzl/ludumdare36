@@ -87,7 +87,7 @@ nodes {
     w: 1.0
   }
   size {
-    x: 200.0
+    x: 280.0
     y: 100.0
     z: 0.0
     w: 1.0
@@ -100,7 +100,8 @@ nodes {
   }
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
-  text: "PRESS ANY KEY TO START"
+  text: "PRESS ANY KEY TO START\\n"
+  "ARROW KEYS TO MOVE"
   font: "smallest_pixel-7"
   id: "instructions"
   xanchor: XANCHOR_NONE
@@ -119,7 +120,7 @@ nodes {
     w: 1.0
   }
   adjust_mode: ADJUST_MODE_FIT
-  line_break: false
+  line_break: true
   layer: ""
   inherit_alpha: true
   clipping_mode: CLIPPING_MODE_NONE

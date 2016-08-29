@@ -2,6 +2,7 @@ local flow = require "ludobits.m.flow"
 local input = require "ludobits.m.input"
 
 local function show_message(text, duration, wait)
+	wait = true
 	duration = duration or 3
 	msg.post("#gui", "show_message", { text = text, duration = duration })
 	if wait then
@@ -17,9 +18,9 @@ function init(self)
 	math.randomseed(os.time())
 	self.flow_instance = flow.start(function()
 		input.release("game:/player/player")
-		show_message("Umm, where am I?", 3, true)
+		show_message("Umm, where am I?", 1.5)
 		input.acquire("game:/player/player")
-		show_message("I wonder what that big cube is all about?", 5)
+		show_message("I wonder what that big cube is all about?", 4)
 		flow.until_message(hash("update_gold"))
 		show_message("OMG! What the hell just happened?", 2)
 		flow.until_true(function()
@@ -29,15 +30,15 @@ function init(self)
 		flow.until_true(function()
 			return get_gold() > 50
 		end)
-		show_message("I'll be richer than king Midas if I keep this up!", 3)
+		show_message("I'll be richer than king Midas if I keep this up!", 2)
 		flow.until_message(hash("blob_spawned"))
-		show_message("Uh-oh! What's that green thing?", 2, true)
-		show_message("And why is it coming towards my moneymaker?!", 3)
+		show_message("Uh-oh! What's that green thing?", 2)
+		show_message("And why is it coming towards my moneymaker?!", 2)
 		show_message("Maybe some chinese gun powder will stop them?", 2)
 		show_message("Press keyboard to trade gold for a bomb!", 2)
 		flow.until_message(hash("bomb_created"))
 		show_message("That's it!", 2)
-		
+		show_message("I should probably not let them reach the cube", 2)
 	end)
 end
 
