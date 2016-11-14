@@ -47,6 +47,10 @@ function final(self)
 	flow.stop(self.flow_instance)
 end
 
+function update(self, dt)
+	flow.update(dt)
+end
+
 function on_message(self, message_id, message, sender)
 	flow.on_message(message_id, message, sender)
 	if message_id == UPDATE_GOLD then
