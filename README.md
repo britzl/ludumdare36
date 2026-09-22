@@ -2,4 +2,4 @@
 Ludum Dare 36 Competition entry
 
 # Try the game online
-[http://www.bitfront.com/LD36](http://www.bitfront.com/LD36)
+[https://britzl.github.io/LD36/](https://britzl.github.io/LD36/)
